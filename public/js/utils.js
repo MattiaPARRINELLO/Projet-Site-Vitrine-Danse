@@ -47,15 +47,15 @@ function extractHours(timeString) {
     if (!timeString || typeof timeString !== 'string') {
         return { start: 9, end: 10 };
     }
-    
+
     const match = timeString.match(/(\d{1,2})[h:](\d{2})\s*-\s*(\d{1,2})[h:](\d{2})/);
     if (!match) return { start: 9, end: 10 };
-    
+
     const startHour = parseInt(match[1]);
     const startMin = parseInt(match[2]);
     const endHour = parseInt(match[3]);
     const endMin = parseInt(match[4]);
-    
+
     return {
         start: startHour + startMin / 60,
         end: endHour + endMin / 60
@@ -69,14 +69,14 @@ function parseDuration(durationString) {
     if (!durationString || typeof durationString !== 'string') {
         return 60;
     }
-    
+
     const hourMatch = durationString.match(/(\d+)h/);
     const minMatch = durationString.match(/(\d+)\s*min/);
-    
+
     let totalMinutes = 0;
     if (hourMatch) totalMinutes += parseInt(hourMatch[1]) * 60;
     if (minMatch) totalMinutes += parseInt(minMatch[1]);
-    
+
     return totalMinutes || 60;
 }
 
@@ -85,12 +85,12 @@ function parseDuration(durationString) {
  */
 function isRecent(dateString) {
     if (!dateString) return false;
-    
+
     const date = new Date(dateString);
     const now = new Date();
     const diffTime = Math.abs(now - date);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
+
     return diffDays <= 7;
 }
 

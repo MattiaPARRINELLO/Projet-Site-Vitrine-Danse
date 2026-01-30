@@ -5,9 +5,7 @@
       "type": "Multi Danse",
       "level": "Débutant",
       "category": "Multi Danse",
-      "days": [
-        "Lundi"
-      ],
+      "days": ["Lundi"],
       "time": "18h30 - 20h30",
       "duration": "2h",
       "room": "",
@@ -20,9 +18,7 @@
       "type": "Multi Danse",
       "level": "Avancé",
       "category": "Multi Danse",
-      "days": [
-        "Lundi"
-      ],
+      "days": ["Lundi"],
       "time": "20h30 - 22h00",
       "duration": "1h30",
       "room": "",
@@ -35,9 +31,7 @@
       "type": "Multi Danse",
       "level": "Avancé",
       "category": "Multi Danse",
-      "days": [
-        "Jeudi"
-      ],
+      "days": ["Jeudi"],
       "time": "20h30 - 22h00",
       "duration": "1h30",
       "room": "",
@@ -50,9 +44,7 @@
       "type": "hgfd",
       "level": "Débutant",
       "category": "hgfd",
-      "days": [
-        "Lundi"
-      ],
+      "days": ["Lundi"],
       "time": "12h21 - 12h30",
       "duration": "9min",
       "room": "",

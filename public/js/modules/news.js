@@ -42,7 +42,7 @@ function renderNews(news) {
         if (navNews) navNews.style.display = 'none';
         return;
     }
-    
+
     // Afficher la section et le lien nav si elle contient des actualités
     if (newsSection) newsSection.style.display = '';
     if (navNews) navNews.style.display = '';
@@ -81,7 +81,7 @@ function renderNews(news) {
 function checkNewNews(news) {
     const seenIds = getSeenNewsIds();
     const currentIds = news.map(item => item.id || item.title);
-    
+
     // Trouver les nouvelles actualités non vues
     const newItems = news.filter(item => {
         const itemId = item.id || item.title;
@@ -194,13 +194,13 @@ function checkForNewContent() {
             const response = await fetch('/api/news');
             const data = await response.json();
             const news = data?.news || [];
-            
+
             const seenIds = getSeenNewsIds();
             const newItems = news.filter(item => {
                 const itemId = item.id || item.title;
                 return !seenIds.includes(itemId) && isRecent(item.date);
             });
-            
+
             if (newItems.length > 0) {
                 // Notification toast
                 showToast(

@@ -14,7 +14,7 @@ function initGallery() {
 
     // Collecter tous les items
     const items = galleryGrid.querySelectorAll('.gallery-item');
-    
+
     // Cacher la section et le lien nav si pas d'items dans la galerie
     const navGallery = document.getElementById('nav-gallery');
     if (!items || items.length === 0) {
@@ -24,7 +24,7 @@ function initGallery() {
     }
     // Afficher le lien nav si la galerie a du contenu
     if (navGallery) navGallery.style.display = '';
-    
+
     items.forEach((item, index) => {
         AppState.galleryItems.push({
             element: item,

@@ -2,56 +2,56 @@
    CONTAINER ET LAYOUT
    ============================================ */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
 }
 
 .section {
-    padding: var(--spacing-xl) 0;
-    position: relative;
-    overflow: hidden;
-    background-color: var(--dark-color);
+  padding: var(--spacing-xl) 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark-color);
 }
 
 /* Alternance de couleurs de fond pour sections */
 .section:nth-child(even) {
-    background-color: var(--light-color);
+  background-color: var(--light-color);
 }
 
 /* ============================================
    SECTIONS HEADER
    ============================================ */
 .section-header {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-    color: var(--text-dark);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-dark);
 }
 
 .section-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
 }
 
 .section-title::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-    border-radius: 2px;
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
 }
 
 .section-description {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 1.5rem auto 0;
-    line-height: 1.7;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  line-height: 1.7;
 }

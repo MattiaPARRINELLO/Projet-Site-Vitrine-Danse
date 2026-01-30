@@ -385,7 +385,63 @@ app.get('/', (req, res) => {
 // ============================================
 // DÉMARRAGE DU SERVEUR
 // ============================================
+
+// Codes couleurs ANSI
+const colors = {
+    reset: '\x1b[0m',
+    bright: '\x1b[1m',
+    dim: '\x1b[2m',
+    cyan: '\x1b[36m',
+    green: '\x1b[32m',
+    yellow: '\x1b[33m',
+    red: '\x1b[31m',
+    magenta: '\x1b[35m',
+    white: '\x1b[37m',
+    bgCyan: '\x1b[46m',
+    bgGreen: '\x1b[42m'
+};
+
+function printBanner() {
+    const banner = `
+${colors.cyan}${colors.bright}
+    ╔══════════════════════════════════════════════════════════╗
+    ║                                                          ║
+    ║          🎭  ARABESQUE DANCE STUDIO  🎭                  ║
+    ║                                                          ║
+    ║              Backend initialized successfully           ║
+    ║                                                          ║
+    ╚══════════════════════════════════════════════════════════╝
+${colors.reset}`;
+
+    console.log(banner);
+}
+
+function printServerInfo() {
+    const info = [
+        { label: '🌐 Site Public', value: `http://localhost:${PORT}`, color: colors.green },
+        { label: '🔐 Admin Panel', value: `http://localhost:${PORT}/admin`, color: colors.yellow },
+        { label: '⚙️  API Base', value: `http://localhost:${PORT}/api`, color: colors.cyan },
+        { label: '📦 Environment', value: process.env.NODE_ENV || 'development', color: colors.magenta }
+    ];
+
+    console.log(`${colors.bright}${colors.white}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${colors.reset}\n`);
+
+    info.forEach(item => {
+        console.log(`  ${colors.bright}${item.color}${item.label}${colors.reset}`);
+        console.log(`  ${colors.dim}→ ${item.value}${colors.reset}\n`);
+    });
+
+    console.log(`${colors.bright}${colors.white}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${colors.reset}\n`);
+}
+
+function printFooter() {
+    console.log(`${colors.green}${colors.bright}✓ Server is running and ready to accept requests${colors.reset}`);
+    console.log(`${colors.dim}Press ${colors.reset}${colors.bright}CTRL+C${colors.reset}${colors.dim} to stop the server${colors.reset}\n`);
+}
+
 app.listen(PORT, () => {
-    console.log(`🎭 Serveur Arabesque démarré sur http://localhost:${PORT}`);
-    console.log(`📊 Admin accessible sur http://localhost:${PORT}/admin`);
+    printBanner();
+    printServerInfo();
+    printFooter();
 });
+

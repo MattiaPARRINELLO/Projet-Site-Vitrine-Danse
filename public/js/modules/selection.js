@@ -10,7 +10,7 @@ import { scrollToSection } from './navigation.js';
  */
 function toggleCourseSelection(courseId) {
     if (!AppState.scheduleData) return;
-    
+
     const course = AppState.scheduleData.courses.find(c => c.id === courseId);
     if (!course) return;
 
@@ -22,7 +22,7 @@ function toggleCourseSelection(courseId) {
         // Désélectionner
         AppState.selectedCourses.splice(index, 1);
         syncSelectedCourses();
-        
+
         if (btn) {
             btn.classList.remove('selected');
             const btnText = btn.querySelector('.btn-text');
@@ -33,7 +33,7 @@ function toggleCourseSelection(courseId) {
         // Sélectionner
         AppState.selectedCourses.push(course);
         syncSelectedCourses();
-        
+
         if (btn) {
             btn.classList.add('selected');
             const btnText = btn.querySelector('.btn-text');
@@ -43,7 +43,7 @@ function toggleCourseSelection(courseId) {
     }
 
     updateSelectionDisplay();
-    
+
     if (typeof window.updateCalendarSelectionState === 'function') {
         window.updateCalendarSelectionState();
     }

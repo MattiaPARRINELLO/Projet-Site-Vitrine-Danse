@@ -25,7 +25,7 @@ async function loadTeachers() {
     try {
         const response = await fetch('/api/teachers');
         const data = await response.json();
-        
+
         if (data && data.teachers) {
             AppState.allTeachers = data.teachers;
             window.allTeachers = data.teachers;

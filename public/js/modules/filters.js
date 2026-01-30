@@ -57,9 +57,9 @@ function populateTeacherFilter(teachers) {
     if (!filterTeacher || !teachers) return;
 
     AppState.allTeachers = teachers;
-    
+
     filterTeacher.innerHTML = '<option value="all">Tous les professeurs</option>';
-    
+
     teachers.forEach(teacher => {
         const option = document.createElement('option');
         option.value = teacher.name;
@@ -78,21 +78,21 @@ function applyAdvancedFilters() {
 
     // Filtre par niveau
     if (AppState.advancedFilters.level !== 'all') {
-        filteredCourses = filteredCourses.filter(course => 
+        filteredCourses = filteredCourses.filter(course =>
             course.level === AppState.advancedFilters.level
         );
     }
 
     // Filtre par jour
     if (AppState.advancedFilters.day !== 'all') {
-        filteredCourses = filteredCourses.filter(course => 
+        filteredCourses = filteredCourses.filter(course =>
             course.days && course.days.includes(AppState.advancedFilters.day)
         );
     }
 
     // Filtre par professeur
     if (AppState.advancedFilters.teacher !== 'all') {
-        filteredCourses = filteredCourses.filter(course => 
+        filteredCourses = filteredCourses.filter(course =>
             course.teacher === AppState.advancedFilters.teacher
         );
     }

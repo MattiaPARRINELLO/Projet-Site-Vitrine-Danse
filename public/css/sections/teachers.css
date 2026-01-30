@@ -2,189 +2,189 @@
    SECTION PROFESSEURS
    ============================================ */
 .teachers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .teacher-card {
-    background: linear-gradient(
-        135deg,
-        var(--surface-color) 0%,
-        var(--light-color) 100%
-    );
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid var(--border-color);
-    position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--surface-color) 0%,
+    var(--light-color) 100%
+  );
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid var(--border-color);
+  position: relative;
 }
 
 .teacher-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--primary-color),
-        var(--secondary-color),
-        var(--accent-color)
-    );
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .teacher-card:hover::before {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .teacher-card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .teacher-image {
-    position: relative;
-    overflow: hidden;
-    height: 280px;
-    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
 }
 
 .teacher-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.5s ease;
-    filter: brightness(0.9);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  filter: brightness(0.9);
 }
 
 .teacher-card:hover .teacher-image img {
-    transform: scale(1.1) rotate(2deg);
-    filter: brightness(1.1) contrast(1.1);
+  transform: scale(1.1) rotate(2deg);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .teacher-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 107, 107, 0.9) 0%,
-        rgba(255, 142, 83, 0.9) 100%
-    );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.9) 0%,
+    rgba(255, 142, 83, 0.9) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
 }
 
 .teacher-card:hover .teacher-overlay {
-    opacity: 1;
+  opacity: 1;
 }
 
 .teacher-social {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .social-link {
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    color: var(--primary-color);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  color: var(--primary-color);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .social-link:hover {
-    transform: scale(1.2) rotate(10deg);
-    background: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2) rotate(10deg);
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .social-link i {
-    display: block;
+  display: block;
 }
 
 .teacher-info {
-    padding: 2rem 1.5rem 2.5rem;
-    text-align: center;
-    background: var(--surface-color);
-    position: relative;
+  padding: 2rem 1.5rem 2.5rem;
+  text-align: center;
+  background: var(--surface-color);
+  position: relative;
 }
 
 .teacher-name {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-    position: relative;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  position: relative;
 }
 
 .teacher-name::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
 }
 
 .teacher-card:hover .teacher-name::after {
-    width: 100%;
+  width: 100%;
 }
 
 .teacher-specialty {
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
 }
 
 .teacher-bio {
-    color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1rem;
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
 .teacher-experience {
-    color: var(--accent-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-    background: linear-gradient(
-        135deg,
-        rgba(244, 162, 97, 0.1),
-        rgba(244, 162, 97, 0.05)
-    );
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    display: inline-block;
-    border: 1px solid rgba(244, 162, 97, 0.2);
-    position: relative;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(
+    135deg,
+    rgba(244, 162, 97, 0.1),
+    rgba(244, 162, 97, 0.05)
+  );
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  border: 1px solid rgba(244, 162, 97, 0.2);
+  position: relative;
 }
 
 .teacher-experience i {
-    margin-right: 0.5rem;
-    color: var(--accent-color);
+  margin-right: 0.5rem;
+  color: var(--accent-color);
 }

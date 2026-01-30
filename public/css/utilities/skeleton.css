@@ -2,54 +2,54 @@
    SKELETON LOADING
    ============================================ */
 .skeleton-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    animation: pulse 1.5s ease-in-out infinite;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 .skeleton-card {
-    background: linear-gradient(
-        90deg,
-        var(--surface-color) 25%,
-        var(--surface-hover) 50%,
-        var(--surface-color) 75%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 12px;
-    height: 350px;
+  background: linear-gradient(
+    90deg,
+    var(--surface-color) 25%,
+    var(--surface-hover) 50%,
+    var(--surface-color) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 12px;
+  height: 350px;
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .teachers-grid.loading,
 .news-grid.loading {
-    position: relative;
-    min-height: 400px;
+  position: relative;
+  min-height: 400px;
 }
 
 .teachers-grid.loading::after,
 .news-grid.loading::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        90deg,
-        transparent 25%,
-        rgba(255, 255, 255, 0.05) 50%,
-        transparent 75%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }

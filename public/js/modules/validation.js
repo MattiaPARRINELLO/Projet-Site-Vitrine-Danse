@@ -39,7 +39,7 @@ function initFormValidation() {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const isNameValid = validateName(nameInput);
         const isEmailValid = validateEmail(emailInput);
         const isPhoneValid = phoneInput.value === '' || validatePhone(phoneInput);
@@ -48,16 +48,16 @@ function initFormValidation() {
         if (isNameValid && isEmailValid && isPhoneValid && isMessageValid) {
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
-            
+
             setTimeout(() => {
                 submitBtn.classList.remove('loading');
                 submitBtn.disabled = false;
                 form.reset();
-                
+
                 form.querySelectorAll('.form-group').forEach(group => {
                     group.classList.remove('success', 'error');
                 });
-                
+
                 showToast('Message envoyé !', 'Nous vous répondrons dans les plus brefs délais.', 'success', 5000);
             }, 2000);
         } else {

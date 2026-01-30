@@ -11,12 +11,12 @@ import { showToast } from './toast.js';
  */
 function initViewToggle() {
     const viewBtns = document.querySelectorAll('.view-toggle-btn');
-    
+
     viewBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const view = btn.dataset.view;
             switchView(view);
-            
+
             viewBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         });
@@ -51,12 +51,12 @@ function switchView(view) {
 function displayCalendarView(filteredCourses = null) {
     const calendarHours = document.getElementById('calendarHours');
     const calendarGrid = document.getElementById('calendarGrid');
-    
+
     if (!calendarHours || !calendarGrid || !AppState.scheduleData) return;
 
     const courses = filteredCourses || AppState.scheduleData.courses || [];
     const days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-    
+
     const startHour = 14;
     const endHour = 22.5;
     const slotHeight = 60;
@@ -113,7 +113,7 @@ function displayCalendarView(filteredCourses = null) {
         coursesContainer.className = 'calendar-courses-container';
 
         const dayCoursesData = coursesByDay[day] || [];
-        
+
         if (dayCoursesData.length === 0) {
             const emptyMsg = document.createElement('div');
             emptyMsg.className = 'calendar-no-courses';
@@ -133,7 +133,7 @@ function displayCalendarView(filteredCourses = null) {
         dayColumn.appendChild(dayTimeline);
         calendarGrid.appendChild(dayColumn);
     });
-    
+
     setTimeout(() => updateCalendarSelectionState(), 0);
 }
 
@@ -256,15 +256,15 @@ function layoutCoursesForDay(dayCourses) {
 function updateCalendarSelectionState() {
     const cards = document.querySelectorAll('.calendar-course-card');
     if (!cards.length) return;
-    
+
     const selectedCourses = window.selectedCourses || [];
-    
+
     cards.forEach(card => {
         const courseId = parseInt(card.dataset.courseId);
         if (isNaN(courseId)) return;
-        
+
         const isSelected = selectedCourses.some(c => parseInt(c.id) === courseId);
-        
+
         if (isSelected) {
             card.classList.add('selected');
         } else {
@@ -301,7 +301,7 @@ function initCourseModal() {
         selectBtn.addEventListener('click', () => {
             const courseId = parseInt(selectBtn.dataset.courseId);
             if (isNaN(courseId) || typeof window.toggleCourseSelection !== 'function') return;
-            
+
             window.toggleCourseSelection(courseId);
             updateCourseModalSelectionState(courseId);
             updateCalendarSelectionState();
