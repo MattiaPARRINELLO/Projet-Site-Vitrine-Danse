@@ -1,0 +1,106 @@
+{
+  "courses": [
+    {
+      "id": 1769780958391,
+      "type": "Multi Danse",
+      "level": "Débutant",
+      "category": "Multi Danse",
+      "days": [
+        "Lundi"
+      ],
+      "time": "18h30 - 20h30",
+      "duration": "2h",
+      "room": "",
+      "teacher": "Camille Bonard",
+      "maxStudents": null,
+      "description": ""
+    },
+    {
+      "id": 1769780984230,
+      "type": "Multi Danse",
+      "level": "Avancé",
+      "category": "Multi Danse",
+      "days": [
+        "Lundi"
+      ],
+      "time": "20h30 - 22h00",
+      "duration": "1h30",
+      "room": "",
+      "teacher": "Camille Bonard",
+      "maxStudents": null,
+      "description": ""
+    },
+    {
+      "id": 1769781003348,
+      "type": "Multi Danse",
+      "level": "Avancé",
+      "category": "Multi Danse",
+      "days": [
+        "Jeudi"
+      ],
+      "time": "20h30 - 22h00",
+      "duration": "1h30",
+      "room": "",
+      "teacher": "Camille Bonard",
+      "maxStudents": null,
+      "description": ""
+    },
+    {
+      "id": 1769781983533,
+      "type": "hgfd",
+      "level": "Débutant",
+      "category": "hgfd",
+      "days": [
+        "Lundi"
+      ],
+      "time": "12h21 - 12h30",
+      "duration": "9min",
+      "room": "",
+      "teacher": "",
+      "maxStudents": null,
+      "description": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": "classique",
+      "name": "Classique",
+      "color": "#FF1493"
+    },
+    {
+      "id": "urbain",
+      "name": "Urbain",
+      "color": "#9D4EDD"
+    },
+    {
+      "id": "latine",
+      "name": "Latine",
+      "color": "#06FFA5"
+    },
+    {
+      "id": "contemporain",
+      "name": "Contemporain",
+      "color": "#00D4FF"
+    },
+    {
+      "id": "jazz",
+      "name": "Jazz",
+      "color": "#FFD700"
+    },
+    {
+      "id": "enfants",
+      "name": "Enfants",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": "ados",
+      "name": "Ados",
+      "color": "#4ECDC4"
+    },
+    {
+      "id": "orientale",
+      "name": "Orientale",
+      "color": "#F38181"
+    }
+  ]
+}

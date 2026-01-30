@@ -1,0 +1,37 @@
+{
+  "engagement": "1 an",
+  "payment": "annuel",
+  "coursePrices": {
+    "1": 300,
+    "2": 480,
+    "3": 600,
+    "4": 720,
+    "5": 800
+  },
+  "additionalOptions": [
+    {
+      "id": "private",
+      "name": "Cours privé (1h)",
+      "price": 60,
+      "description": "Cours particulier avec le professeur de votre choix"
+    },
+    {
+      "id": "duo",
+      "name": "Cours duo (1h)",
+      "price": 45,
+      "description": "Cours pour 2 personnes avec un professeur"
+    },
+    {
+      "id": "workshop",
+      "name": "Atelier spécial",
+      "price": 25,
+      "description": "Participation à un atelier thématique"
+    }
+  ],
+  "notes": [
+    "Paiement annuel obligatoire",
+    "Adhésion annuelle : 20€",
+    "Certificat médical requis",
+    "Réductions disponibles sur demande"
+  ]
+}

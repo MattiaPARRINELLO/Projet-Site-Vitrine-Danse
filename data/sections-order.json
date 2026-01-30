@@ -1,0 +1,46 @@
+{
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Accueil",
+      "enabled": true,
+      "order": 1
+    },
+    {
+      "id": "about",
+      "name": "À propos",
+      "enabled": true,
+      "order": 2
+    },
+    {
+      "id": "news",
+      "name": "Actualités",
+      "enabled": true,
+      "order": 3
+    },
+    {
+      "id": "schedule",
+      "name": "Planning",
+      "enabled": true,
+      "order": 4
+    },
+    {
+      "id": "teachers",
+      "name": "Professeurs",
+      "enabled": true,
+      "order": 5
+    },
+    {
+      "id": "gallery",
+      "name": "Galerie",
+      "enabled": true,
+      "order": 6
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "enabled": true,
+      "order": 7
+    }
+  ]
+}

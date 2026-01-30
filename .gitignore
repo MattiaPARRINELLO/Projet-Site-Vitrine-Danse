@@ -1,0 +1,69 @@
+# ============================================
+# ARABESQUE - GITIGNORE
+# ============================================
+
+# === DÉPENDANCES ===
+node_modules/
+package-lock.json
+
+# === DONNÉES SENSIBLES ===
+data/admin.json
+
+# === MÉDIAS (trop volumineux pour Git) ===
+public/assets/images/*.jpg
+public/assets/images/*.jpeg
+public/assets/images/*.png
+public/assets/images/*.gif
+public/assets/images/*.webp
+public/assets/videos/
+data/news/
+
+# Uploads admin (dossier racine)
+assets/
+
+# Garder les fichiers essentiels
+!public/assets/images/logo.svg
+!public/assets/images/.gitkeep
+
+# === LOGS ===
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === SYSTÈME ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.kate-swp
+*~
+
+# === IDE / ÉDITEURS ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# === ENVIRONNEMENT ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# === BUILD ===
+dist/
+build/
+.cache/
+
+# === TEMPORAIRES ===
+*.tmp
+*.temp
+*.bak

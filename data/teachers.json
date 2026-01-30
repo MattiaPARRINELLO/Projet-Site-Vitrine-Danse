@@ -1,0 +1,12 @@
+{
+  "teachers": [
+    {
+      "id": 1769782076589,
+      "name": "Camille Bonard",
+      "description": "La bossssss",
+      "photo": "/assets/images/1769782076537-25159153.png",
+      "discipline": "Multi Danse",
+      "experience": "15 ans"
+    }
+  ]
+}

@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Arabesque - Association de danse proposant divers cours pour tous niveaux"
+    />
+    <title>Arabesque - Association de Danse</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arabesque-danse.fr/" />
+    <meta property="og:title" content="Arabesque - Association de Danse" />
+    <meta
+      property="og:description"
+      content="Découvrez nos cours de danse pour tous les niveaux : Ballet, Hip-Hop, Salsa, Contemporain et plus encore !"
+    />
+    <meta
+      property="og:image"
+      content="https://arabesque-danse.fr/assets/images/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://arabesque-danse.fr/" />
+    <meta property="twitter:title" content="Arabesque - Association de Danse" />
+    <meta
+      property="twitter:description"
+      content="Découvrez nos cours de danse pour tous les niveaux : Ballet, Hip-Hop, Salsa, Contemporain et plus encore !"
+    />
+    <meta
+      property="twitter:image"
+      content="https://arabesque-danse.fr/assets/images/og-image.jpg"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER / NAVIGATION -->
+    <header id="header">
+      <nav class="navbar">
+        <div class="container nav-container">
+          <div class="logo">
+            <img src="assets/images/logo.svg" alt="Arabesque Logo" />
+            <span class="logo-text">Arabesque</span>
+          </div>
+          <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#hero" class="nav-link">Accueil</a></li>
+            <li><a href="#about" class="nav-link">À propos</a></li>
+            <li><a href="#schedule" class="nav-link">Planning</a></li>
+            <li><a href="#teachers" class="nav-link">Professeurs</a></li>
+            <li id="nav-gallery">
+              <a href="#gallery" class="nav-link">Galerie</a>
+            </li>
+            <li id="nav-news">
+              <a href="#news" class="nav-link">Actualités</a>
+            </li>
+            <li><a href="#testimonials" class="nav-link">Avis</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+            <li><a href="#contact" class="nav-link btn-contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+      <div class="hero-background">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-line">Bienvenue à</span>
+          <span class="title-brand">Arabesque</span>
+        </h1>
+        <p class="hero-subtitle">Où la passion de la danse prend vie</p>
+        <div class="hero-buttons">
+          <a href="#schedule" class="btn btn-primary">Découvrir nos cours</a>
+          <a href="#contact" class="btn btn-secondary">Nous contacter</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- SECTION À PROPOS -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">À propos d'Arabesque</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="assets/images/danse1.jpg" alt="Association Arabesque" />
+            <div class="image-decoration"></div>
+          </div>
+          <div class="about-text">
+            <p class="lead">
+              Arabesque est une association passionnée dédiée à l'art de la
+              danse sous toutes ses formes. Depuis notre création, nous nous
+              efforçons de promouvoir la danse et d'offrir un espace
+              d'expression artistique pour tous les âges et tous les niveaux.
+            </p>
+            <p>
+              Notre équipe de professeurs qualifiés vous accompagne dans votre
+              progression, que vous soyez débutant ou danseur confirmé.
+              Rejoignez notre communauté dynamique et découvrez le plaisir de
+              danser dans une ambiance conviviale et professionnelle.
+            </p>
+            <div class="about-features">
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                <h3>Passion</h3>
+                <p>L'amour de la danse au cœur de tout</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>Communauté</h3>
+                <p>Un esprit d'équipe et de partage</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-star"></i></div>
+                <h3>Excellence</h3>
+                <p>Des cours de qualité professionnelle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PLANNING DES COURS -->
+    <section id="schedule" class="section schedule">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Planning des cours</h2>
+          <p class="section-description">
+            Découvrez nos différents styles de danse et sélectionnez vos cours
+          </p>
+        </div>
+
+        <!-- Filtres par type de danse -->
+        <div class="schedule-filters-wrapper">
+          <div class="schedule-view-toggle">
+            <button class="view-toggle-btn active" data-view="grid">
+              <i class="fas fa-th"></i> Grille
+            </button>
+            <button class="view-toggle-btn" data-view="calendar">
+              <i class="fas fa-calendar-alt"></i> Calendrier
+            </button>
+          </div>
+        </div>
+
+        <!-- Filtres avancés -->
+        <div class="advanced-filters">
+          <div class="filter-group">
+            <label><i class="fas fa-signal"></i> Niveau</label>
+            <select id="filterLevel">
+              <option value="all">Tous les niveaux</option>
+              <option value="Initiation">Initiation</option>
+              <option value="Débutant">Débutant</option>
+              <option value="Intermédiaire">Intermédiaire</option>
+              <option value="Avancé">Avancé</option>
+              <option value="Tous niveaux">Tous niveaux</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label><i class="fas fa-calendar-day"></i> Jour</label>
+            <select id="filterDay">
+              <option value="all">Tous les jours</option>
+              <option value="Lundi">Lundi</option>
+              <option value="Mardi">Mardi</option>
+              <option value="Mercredi">Mercredi</option>
+              <option value="Jeudi">Jeudi</option>
+              <option value="Vendredi">Vendredi</option>
+              <option value="Samedi">Samedi</option>
+              <option value="Dimanche">Dimanche</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label><i class="fas fa-user"></i> Professeur</label>
+            <select id="filterTeacher">
+              <option value="all">Tous les professeurs</option>
+            </select>
+          </div>
+          <button class="btn-reset-filters" id="resetFilters">
+            <i class="fas fa-redo"></i> Réinitialiser
+          </button>
+        </div>
+
+        <!-- Vue Grille des cours -->
+        <div class="schedule-grid" id="scheduleGrid">
+          <!-- Skeleton loading -->
+          <div class="skeleton-grid" id="scheduleLoading">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+          </div>
+        </div>
+
+        <!-- Vue Calendrier -->
+        <div
+          class="schedule-calendar"
+          id="scheduleCalendar"
+          style="display: none"
+        >
+          <div class="calendar-container">
+            <!-- Colonne des heures -->
+            <div class="calendar-hours" id="calendarHours">
+              <!-- Remplie dynamiquement par JS -->
+            </div>
+
+            <!-- Grille des jours -->
+            <div class="calendar-grid" id="calendarGrid">
+              <!-- Remplie dynamiquement par JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup cours (calendrier) -->
+      <div id="courseModal" class="course-modal" aria-hidden="true">
+        <div class="course-modal-overlay"></div>
+        <div
+          class="course-modal-content"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="courseModalTitle"
+        >
+          <button class="course-modal-close" type="button" aria-label="Fermer">
+            ×
+          </button>
+          <div class="course-modal-header">
+            <h3 id="courseModalTitle">Cours</h3>
+            <p id="courseModalSubtitle" class="course-modal-subtitle"></p>
+          </div>
+          <div id="courseModalDetails" class="course-modal-details"></div>
+          <p id="courseModalDescription" class="course-modal-description"></p>
+          <div class="course-modal-footer">
+            <button
+              id="courseModalSelectBtn"
+              class="btn btn-primary"
+              type="button"
+            >
+              Sélectionner ce cours
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Panier de sélection -->
+
+      <div id="courseSelection" class="course-selection" style="display: none">
+        <div class="selection-header">
+          <h3>📋 Mes cours sélectionnés (<span id="selectedCount">0</span>)</h3>
+          <button onclick="clearSelection()" class="btn-clear">
+            Tout effacer
+          </button>
+        </div>
+        <div id="selectedCoursesList" class="selected-courses-list"></div>
+        <div class="selection-footer">
+          <div class="selection-price">
+            <span>Prix annuel total :</span>
+            <span class="price-amount" id="selectionTotalPrice">0€</span>
+          </div>
+          <button onclick="proceedToSubscribe()" class="btn btn-primary">
+            S'inscrire à ces cours
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PROFESSEURS -->
+    <section id="teachers" class="section teachers">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nos professeurs</h2>
+          <p class="section-description">
+            Une équipe passionnée et expérimentée à votre service
+          </p>
+        </div>
+        <div class="teachers-grid"></div>
+      </div>
+    </section>
+
+    <!-- SECTION GALERIE -->
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Galerie</h2>
+          <p class="section-description">
+            Découvrez nos spectacles, cours et événements en images
+          </p>
+        </div>
+
+        <!-- Grille galerie -->
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+
+      <!-- Lightbox pour agrandir les médias -->
+      <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <button class="lightbox-nav prev" onclick="navigateLightbox(-1)">
+          ‹
+        </button>
+        <button class="lightbox-nav next" onclick="navigateLightbox(1)">
+          ›
+        </button>
+        <div class="lightbox-content" id="lightboxContent"></div>
+      </div>
+    </section>
+
+    <!-- SECTION ACTUALITÉS / BLOG -->
+    <section id="news" class="section news">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Dernières actualités</h2>
+          <p class="section-description">
+            Découvrez nos événements, spectacles et nouveautés
+          </p>
+        </div>
+
+        <div class="news-grid" id="newsGrid"></div>
+      </div>
+    </section>
+
+    <!-- SECTION TÉMOIGNAGES -->
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Ce que disent nos élèves</h2>
+          <p class="section-description">
+            Découvrez l'expérience de nos danseurs
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Une expérience incroyable ! Les cours de ballet avec Sophie m'ont
+              permis de réaliser mon rêve d'enfant. L'ambiance est chaleureuse
+              et les progrès sont rapides."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/danse1.jpg" alt="Marie L." />
+              <div class="author-info">
+                <h4>Marie L.</h4>
+                <p>Élève en Ballet Classique</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Le hip-hop avec Marc est une explosion d'énergie ! Super
+              ambiance, cours dynamiques et une vraie progression technique. Je
+              recommande à 100%."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/danse1.jpg" alt="Thomas D." />
+              <div class="author-info">
+                <h4>Thomas D.</h4>
+                <p>Élève en Hip-Hop</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Les cours de salsa sont un vrai moment de plaisir ! Elena est une
+              professeure exceptionnelle qui transmet sa passion avec le
+              sourire. Merci Arabesque !"
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/danse1.jpg" alt="Julie M." />
+              <div class="author-info">
+                <h4>Julie M.</h4>
+                <p>Élève en Salsa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION FAQ -->
+    <section id="faq" class="section faq">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Questions fréquentes</h2>
+          <p class="section-description">
+            Trouvez rapidement les réponses à vos questions
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Comment puis-je m'inscrire à un cours ?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Vous pouvez vous inscrire directement via notre formulaire de
+                contact en sélectionnant "Inscription" comme sujet, ou nous
+                contacter par téléphone. Nous vous guiderons à travers le
+                processus d'inscription et vous fournirons toutes les
+                informations nécessaires.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span
+                >Est-ce que je peux essayer un cours avant de m'inscrire ?</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Oui, absolument ! Nous proposons un cours d'essai gratuit pour
+                tous les nouveaux élèves. Cela vous permet de découvrir
+                l'ambiance, de rencontrer le professeur et de vous assurer que
+                le cours correspond à vos attentes.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Quel équipement dois-je prévoir pour les cours ?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                L'équipement varie selon le type de danse. En général, prévoyez
+                des vêtements confortables et adaptés au mouvement. Pour
+                certains cours spécifiques (ballet, claquettes), des chaussures
+                particulières sont nécessaires. Votre professeur vous guidera
+                lors de votre premier cours.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Proposez-vous des cours pour enfants ?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Oui, nous avons plusieurs cours adaptés aux enfants de
+                différents âges, de l'éveil corporel dès 4 ans jusqu'aux cours
+                pour adolescents. Consultez notre planning pour voir les
+                horaires disponibles.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Puis-je m'inscrire à plusieurs cours différents ?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Bien sûr ! Nous encourageons même la pratique de plusieurs
+                styles de danse. Cela permet de développer différentes
+                compétences et de varier les plaisirs. Des tarifs dégressifs
+                sont disponibles pour les inscriptions multiples.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Que se passe-t-il si je rate un cours ?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Si vous ratez un cours, vous pouvez le rattraper dans un autre
+                créneau du même niveau, selon les disponibilités. Contactez-nous
+                pour organiser votre rattrapage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Prenez contact</h2>
+          <p class="section-description">
+            Une question ? N'hésitez pas à nous écrire
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- Formulaire de contact -->
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nom complet *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                />
+                <span class="form-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                />
+                <span class="form-error"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" />
+                <span class="form-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="subject">Sujet *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Choisir un sujet</option>
+                  <option value="info">Demande d'information</option>
+                  <option value="registration">Inscription</option>
+                  <option value="private">Cours privés</option>
+                  <option value="other">Autre</option>
+                </select>
+                <span class="form-error"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+              ></textarea>
+              <span class="form-error"></span>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <span>Envoyer le message</span>
+                <span class="btn-loader"></span>
+              </button>
+            </div>
+            <div class="form-message" id="formMessage"></div>
+          </form>
+
+          <!-- Informations de contact -->
+          <div class="contact-info">
+            <div class="info-card">
+              <div class="info-icon">📍</div>
+              <h3>Adresse</h3>
+              <p>123 Avenue de la Danse<br />75000 Paris, France</p>
+            </div>
+            <div class="info-card">
+              <div class="info-icon">📞</div>
+              <h3>Téléphone</h3>
+              <p>01 23 45 67 89<br />06 12 34 56 78</p>
+            </div>
+            <div class="info-card">
+              <div class="info-icon">✉️</div>
+              <h3>Email</h3>
+              <p>contact@arabesque-danse.fr<br />info@arabesque-danse.fr</p>
+            </div>
+            <div class="info-card">
+              <div class="info-icon">🕐</div>
+              <h3>Horaires</h3>
+              <p>Lun - Ven: 10h - 22h<br />Sam - Dim: 9h - 19h</p>
+            </div>
+
+            <div class="social-links">
+              <h3>Suivez-nous</h3>
+              <div class="social-icons">
+                <a href="#" class="social-icon">📘</a>
+                <a href="#" class="social-icon">📷</a>
+                <a href="#" class="social-icon">🐦</a>
+                <a href="#" class="social-icon">▶️</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="assets/images/logo.svg" alt="Arabesque Logo" />
+              <span>Arabesque</span>
+            </div>
+            <p class="footer-description">
+              Votre association de danse à Paris, proposant des cours pour tous
+              les niveaux et tous les âges.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Liens rapides</h4>
+            <ul class="footer-links">
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#schedule">Planning</a></li>
+              <li><a href="#teachers">Professeurs</a></li>
+              <li><a href="#pricing">Tarifs</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Informations</h4>
+            <ul class="footer-links">
+              <li><a href="#">Mentions légales</a></li>
+              <li><a href="#">Politique de confidentialité</a></li>
+              <li><a href="#">CGV</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Arabesque - Association de Danse. Tous droits réservés.
+          </p>
+          <p class="footer-credits">
+            Codé avec ❤️ par
+            <a
+              href="https://github.com/MattiaParrinello"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Mattia PARRINELLO</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <!-- Toast notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

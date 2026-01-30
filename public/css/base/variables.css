@@ -1,0 +1,46 @@
+/* ============================================
+   VARIABLES CSS - COULEURS ET THÈME DARK
+   ============================================ */
+:root {
+    /* === PALETTE PRINCIPALE === */
+    --primary-color: #e63946;
+    --secondary-color: #457b9d;
+    --accent-color: #f4a261;
+
+    /* === COULEURS DE FOND === */
+    --dark-color: #0a0e27;
+    --light-color: #1d1d3a;
+    --surface-color: #2a2a45;
+    --surface-hover: #35354f;
+
+    /* === TEXTE === */
+    --text-dark: #e8e9f0;
+    --text-light: #b0b2c3;
+    --text-muted: #7a7c8f;
+
+    /* === AUTRES === */
+    --border-color: #3d3d5c;
+    --overlay-dark: rgba(10, 14, 39, 0.8);
+
+    /* === ESPACEMENTS === */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    /* === TYPOGRAPHIE === */
+    --font-primary: "Poppins", sans-serif;
+    --font-accent: "Dancing Script", cursive;
+
+    /* === TRANSITIONS === */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* === OMBRES === */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px rgba(230, 57, 70, 0.3);
+}

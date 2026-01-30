@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Arabesque</title>
+    <link rel="stylesheet" href="admin-styles.css" />
+  </head>
+  <body>
+    <div id="loginPage" class="login-screen">
+      <div class="login-panel">
+        <div class="login-brand">
+          <span class="brand-icon">🎭</span>
+          <div>
+            <h1>Arabesque</h1>
+            <p>Administration</p>
+          </div>
+        </div>
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input
+              type="password"
+              id="password"
+              required
+              autocomplete="current-password"
+              placeholder="Entrez le mot de passe"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Se connecter</button>
+          <div id="loginError" class="error-message"></div>
+        </form>
+      </div>
+    </div>
+
+    <div id="adminDashboard" class="admin-shell" style="display: none">
+      <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+          <div class="brand-mark">🎭</div>
+          <div>
+            <strong>Arabesque</strong>
+            <span>Admin</span>
+          </div>
+        </div>
+
+        <nav class="admin-nav">
+          <button class="nav-item active" data-tab="news">Actualités</button>
+          <button class="nav-item" data-tab="courses">Cours</button>
+          <button class="nav-item" data-tab="teachers">Professeurs</button>
+          <button class="nav-item" data-tab="pricing">Tarifs</button>
+          <button class="nav-item" data-tab="sections">Sections</button>
+          <button class="nav-item" data-tab="media">Médias</button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="logoutBtn" class="btn btn-ghost">Déconnexion</button>
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div>
+            <h1>Tableau de bord</h1>
+            <p class="muted">Gérez vos contenus en toute simplicité</p>
+          </div>
+          <div class="topbar-actions">
+            <span class="status-pill" id="sessionStatus">Connecté</span>
+          </div>
+        </header>
+
+        <main class="admin-content">
+          <section id="tab-news" class="tab-pane active">
+            <div class="panel-header">
+              <div>
+                <h2>Actualités</h2>
+                <p class="muted">Publiez des annonces, événements et nouveautés.</p>
+              </div>
+              <button class="btn btn-primary" id="addNewsBtn">
+                + Nouvelle actualité
+              </button>
+            </div>
+            <div id="newsList" class="card-grid"></div>
+          </section>
+
+          <section id="tab-courses" class="tab-pane">
+            <div class="panel-header">
+              <div>
+                <h2>Cours</h2>
+                <p class="muted">Ajoutez et gérez les cours du planning.</p>
+              </div>
+              <button class="btn btn-primary" id="addCourseBtn">
+                + Nouveau cours
+              </button>
+            </div>
+            <div id="coursesList" class="card-grid"></div>
+          </section>
+
+          <section id="tab-teachers" class="tab-pane">
+            <div class="panel-header">
+              <div>
+                <h2>Professeurs</h2>
+                <p class="muted">Mettez à jour les intervenants et biographies.</p>
+              </div>
+              <button class="btn btn-primary" id="addTeacherBtn">
+                + Nouveau professeur
+              </button>
+            </div>
+            <div id="teachersList" class="card-grid"></div>
+          </section>
+
+          <section id="tab-pricing" class="tab-pane">
+            <div class="panel-header">
+              <div>
+                <h2>Tarifs</h2>
+                <p class="muted">Modifiez les forfaits et options supplémentaires.</p>
+              </div>
+              <button class="btn btn-primary" id="savePricingBtn">
+                Enregistrer
+              </button>
+            </div>
+
+            <div class="panel-grid">
+              <div class="panel-card">
+                <h3>Général</h3>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label>Engagement</label>
+                    <input type="text" id="pricingEngagement" />
+                  </div>
+                  <div class="form-group">
+                    <label>Mode de paiement</label>
+                    <input type="text" id="pricingPayment" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-card">
+                <h3>Prix par nombre de cours</h3>
+                <div class="form-grid" id="coursePricesGrid">
+                  <div class="form-group">
+                    <label>1 cours</label>
+                    <input type="number" min="0" id="priceCourse1" />
+                  </div>
+                  <div class="form-group">
+                    <label>2 cours</label>
+                    <input type="number" min="0" id="priceCourse2" />
+                  </div>
+                  <div class="form-group">
+                    <label>3 cours</label>
+                    <input type="number" min="0" id="priceCourse3" />
+                  </div>
+                  <div class="form-group">
+                    <label>4 cours</label>
+                    <input type="number" min="0" id="priceCourse4" />
+                  </div>
+                  <div class="form-group">
+                    <label>5 cours</label>
+                    <input type="number" min="0" id="priceCourse5" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-card">
+                <h3>Notes</h3>
+                <div class="form-group">
+                  <textarea
+                    id="pricingNotes"
+                    rows="5"
+                    placeholder="Une note par ligne"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="panel-card">
+                <div class="panel-card-header">
+                  <h3>Options</h3>
+                  <button class="btn btn-secondary" id="addPricingOptionBtn">
+                    + Ajouter
+                  </button>
+                </div>
+                <div id="pricingOptionsList" class="list-stack"></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="tab-sections" class="tab-pane">
+            <div class="panel-header">
+              <div>
+                <h2>Ordre des sections</h2>
+                <p class="muted">Glissez-déposez pour réorganiser la page.</p>
+              </div>
+              <button class="btn btn-primary" id="saveSectionsBtn">
+                Enregistrer
+              </button>
+            </div>
+            <div id="sectionsList" class="sortable-list"></div>
+          </section>
+
+          <section id="tab-media" class="tab-pane">
+            <div class="panel-header">
+              <div>
+                <h2>Médias</h2>
+                <p class="muted">Chargez et supprimez des images ou vidéos.</p>
+              </div>
+              <div class="upload-actions">
+                <input type="file" id="mediaUpload" accept="image/*,video/*" />
+                <button class="btn btn-primary" id="uploadMediaBtn">
+                  Uploader
+                </button>
+              </div>
+            </div>
+            <div class="media-grid">
+              <div class="media-section">
+                <h3>Images</h3>
+                <div id="imagesList" class="media-list"></div>
+              </div>
+              <div class="media-section">
+                <h3>Vidéos</h3>
+                <div id="videosList" class="media-list"></div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div id="newsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="newsModalTitle">Nouvelle actualité</h2>
+          <button class="modal-close" data-modal-close>&times;</button>
+        </div>
+        <form id="newsForm" class="modal-body">
+          <input type="hidden" id="newsId" />
+          <div class="form-group">
+            <label>Titre *</label>
+            <input type="text" id="newsTitle" required />
+          </div>
+          <div class="form-group">
+            <label>Texte *</label>
+            <textarea id="newsText" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Image (upload)</label>
+            <input type="file" id="newsImageFile" accept="image/*" />
+            <input type="hidden" id="newsImage" />
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="newsDate" />
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-ghost" data-modal-close>
+              Annuler
+            </button>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="courseModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="courseModalTitle">Nouveau cours</h2>
+          <button class="modal-close" data-modal-close>&times;</button>
+        </div>
+        <form id="courseForm" class="modal-body">
+          <input type="hidden" id="courseId" />
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Type de danse *</label>
+              <input type="text" id="courseType" required />
+            </div>
+            <div class="form-group">
+              <label>Niveau *</label>
+              <select id="courseLevel" required>
+                <option value="">Sélectionner</option>
+                <option value="Initiation">Initiation</option>
+                <option value="Débutant">Débutant</option>
+                <option value="Intermédiaire">Intermédiaire</option>
+                <option value="Avancé">Avancé</option>
+                <option value="Tous niveaux">Tous niveaux</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Catégorie *</label>
+              <input type="text" id="courseCategory" required />
+            </div>
+            <div class="form-group">
+              <label>Jours (virgules)</label>
+              <input type="text" id="courseDays" placeholder="Lundi, Mercredi" />
+            </div>
+            <div class="form-group">
+              <label>Heure de début</label>
+              <input type="time" id="courseStartTime" />
+            </div>
+            <div class="form-group">
+              <label>Heure de fin</label>
+              <input type="time" id="courseEndTime" />
+            </div>
+            <div class="form-group">
+              <label>Durée (auto)</label>
+              <input type="text" id="courseDuration" readonly />
+            </div>
+            <div class="form-group">
+              <label>Salle</label>
+              <input type="text" id="courseRoom" />
+            </div>
+            <div class="form-group">
+              <label>Professeur</label>
+              <select id="courseTeacher">
+                <option value="">Sélectionner</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Max élèves</label>
+              <input type="number" id="courseMaxStudents" min="1" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="courseDescription" rows="3"></textarea>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-ghost" data-modal-close>
+              Annuler
+            </button>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="teacherModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="teacherModalTitle">Nouveau professeur</h2>
+          <button class="modal-close" data-modal-close>&times;</button>
+        </div>
+        <form id="teacherForm" class="modal-body">
+          <input type="hidden" id="teacherId" />
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nom *</label>
+              <input type="text" id="teacherName" required />
+            </div>
+            <div class="form-group">
+              <label>Discipline</label>
+              <input type="text" id="teacherDiscipline" />
+            </div>
+            <div class="form-group">
+              <label>Expérience</label>
+              <input type="text" id="teacherExperience" placeholder="10 ans" />
+            </div>
+            <div class="form-group">
+              <label>Photo</label>
+              <input type="file" id="teacherPhotoFile" accept="image/*" />
+              <input type="hidden" id="teacherPhoto" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description *</label>
+            <textarea id="teacherDescription" rows="4" required></textarea>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-ghost" data-modal-close>
+              Annuler
+            </button>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+  </body>
+</html>

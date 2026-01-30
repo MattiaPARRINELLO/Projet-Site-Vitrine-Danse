@@ -1,0 +1,293 @@
+/* ============================================
+   VUE CALENDRIER - AGENDA STYLE
+   ============================================ */
+.schedule-calendar {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    overflow-x: auto;
+}
+
+.calendar-container {
+    display: flex;
+    gap: 1rem;
+    min-width: 100%;
+}
+
+/* Toggle vue grille/calendrier */
+.schedule-view-toggle {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--surface-color);
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.view-toggle-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-toggle-btn:hover {
+    background: rgba(230, 57, 70, 0.1);
+    color: var(--primary-color);
+}
+
+.view-toggle-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Colonne des heures */
+.calendar-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-width: 60px;
+    flex-shrink: 0;
+}
+
+.calendar-hour {
+    height: 60px;
+    border-right: 1px solid var(--border-color);
+    padding-right: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-align: right;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+}
+
+/* Grille des jours */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    flex: 1;
+    min-width: 800px;
+}
+
+/* Jour de la semaine */
+.calendar-day-column {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--light-color);
+}
+
+.calendar-day-header {
+    background: var(--surface-color);
+    padding: 0.75rem;
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Timeline container pour chaque jour */
+.calendar-day-timeline {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--light-color);
+}
+
+/* Chaque heure dans la timeline */
+.calendar-time-slot {
+    height: 60px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.calendar-time-slot:last-child {
+    border-bottom: none;
+}
+
+/* Conteneur absolu pour les cours */
+.calendar-courses-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2px;
+}
+
+/* Carte de cours dans le calendrier */
+.calendar-course-card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: var(--surface-color);
+    border: 2px solid var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-course-card:hover {
+    background: var(--surface-hover, #363852);
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
+    transform: translateY(-2px);
+    z-index: 10;
+}
+
+.calendar-course-card.selected {
+    border: 3px solid var(--primary-color) !important;
+    border-left: 5px solid var(--primary-color) !important;
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.4), 0 8px 20px rgba(230, 57, 70, 0.3) !important;
+    background: linear-gradient(135deg, rgba(230, 57, 70, 0.3), rgba(230, 57, 70, 0.15)) !important;
+    transform: scale(1.02) !important;
+    z-index: 20 !important;
+}
+
+.calendar-course-card.selected::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(230, 57, 70, 0.08);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.calendar-course-card.selected::after {
+    content: "✓";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 22px;
+    height: 22px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.calendar-course-card.overlapping {
+    right: 0;
+    width: calc(100% - 15px);
+    margin-right: 15px;
+    opacity: 0.95;
+}
+
+.calendar-course-card.overlapping-second {
+    right: 0;
+    margin-right: 0;
+    width: calc(100% - 30px);
+    opacity: 0.85;
+    z-index: 9;
+}
+
+.calendar-course-card.overlapping-third {
+    right: 0;
+    margin-right: 0;
+    width: calc(100% - 45px);
+    opacity: 0.75;
+    z-index: 8;
+}
+
+.course-card-time {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+}
+
+.course-card-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin: 0.2rem 0;
+    line-height: 1.2;
+}
+
+.course-card-teacher {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    line-height: 1;
+    margin-top: 0.2rem;
+}
+
+.course-card-level {
+    font-size: 0.65rem;
+    color: var(--primary-color);
+    background: rgba(230, 57, 70, 0.1);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+/* Empty state */
+.calendar-no-courses {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Responsive calendrier */
+@media (max-width: 1200px) {
+    .calendar-grid {
+        grid-template-columns: repeat(4, 1fr);
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-grid {
+        grid-template-columns: 1fr;
+        min-width: 100%;
+    }
+
+    .calendar-container {
+        flex-direction: column;
+    }
+
+    .calendar-hours {
+        display: none;
+    }
+
+    .calendar-day-timeline {
+        min-height: 600px;
+    }
+}

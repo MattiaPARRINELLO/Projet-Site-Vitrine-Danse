@@ -1,0 +1,39 @@
+/* ============================================
+   ARABESQUE DANCE STUDIO - MAIN STYLES
+   Point d'entrée principal CSS
+   ============================================ */
+
+/* === BASE === */
+@import 'base/variables.css';
+@import 'base/reset.css';
+
+/* === LAYOUT === */
+@import 'layout/container.css';
+@import 'layout/header.css';
+@import 'layout/footer.css';
+
+/* === COMPONENTS === */
+@import 'components/buttons.css';
+@import 'components/forms.css';
+@import 'components/toast.css';
+@import 'components/modal.css';
+@import 'components/lightbox.css';
+@import 'components/filters.css';
+
+/* === SECTIONS === */
+@import 'sections/hero.css';
+@import 'sections/about.css';
+@import 'sections/schedule.css';
+@import 'sections/calendar.css';
+@import 'sections/teachers.css';
+@import 'sections/gallery.css';
+@import 'sections/news.css';
+@import 'sections/selection.css';
+@import 'sections/contact.css';
+@import 'sections/testimonials.css';
+@import 'sections/faq.css';
+
+/* === UTILITIES === */
+@import 'utilities/skeleton.css';
+@import 'utilities/animations.css';
+@import 'utilities/responsive.css';
