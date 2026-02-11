@@ -51,7 +51,9 @@ function renderNews(news) {
     checkNewNews(news);
 
     newsGrid.innerHTML = news.map(item => {
-        const image = item.image && item.image.trim() ? item.image : 'assets/images/danse1.jpg';
+        const image = item.image && item.image.trim()
+            ? item.image
+            : 'https://images.unsplash.com/photo-1515165562835-c4c89f819bcd?auto=format&fit=crop&w=1200&q=80';
         const text = item.text || '';
 
         return `
@@ -150,8 +152,8 @@ function showPushNotification(newsItem) {
 
     const notification = new Notification('🎭 Arabesque - Nouvelle actualité', {
         body: newsItem.title || 'Une nouvelle actualité est disponible',
-        icon: '/assets/images/logo.png',
-        badge: '/assets/images/logo.png',
+        icon: '/assets/images/logo.svg',
+        badge: '/assets/images/logo.svg',
         tag: `news-${newsItem.id || newsItem.title}`,
         requireInteraction: false
     });

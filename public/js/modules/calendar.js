@@ -5,6 +5,7 @@
 import { AppState } from '../state.js';
 import { extractHours } from '../utils.js';
 import { showToast } from './toast.js';
+import { displaySchedule } from './schedule.js';
 
 /**
  * Initialise le toggle de vue grille/calendrier
@@ -34,9 +35,13 @@ function switchView(view) {
     if (view === 'grid') {
         scheduleGrid.style.display = 'grid';
         scheduleCalendar.style.display = 'none';
-        // Réappliquer les filtres
-        if (typeof window.applyAdvancedFilters === 'function') {
+        const advanced = AppState.advancedFilters || {};
+        const hasAdvancedFilters = Object.values(advanced).some(value => value !== 'all');
+
+        if (hasAdvancedFilters && typeof window.applyAdvancedFilters === 'function') {
             window.applyAdvancedFilters();
+        } else {
+            displaySchedule(AppState.currentFilter || 'all');
         }
     } else {
         scheduleGrid.style.display = 'none';
@@ -332,7 +337,6 @@ function openCourseModal(course) {
             <div><i class="fas fa-clock"></i> ${course.time || ''}</div>
             <div><i class="fas fa-hourglass-half"></i> ${course.duration || ''}</div>
             <div><i class="fas fa-map-marker-alt"></i> ${course.room || ''}</div>
-            <div><i class="fas fa-users"></i> ${course.maxStudents ? `Max ${course.maxStudents} élèves` : ''}</div>
         `;
     }
 

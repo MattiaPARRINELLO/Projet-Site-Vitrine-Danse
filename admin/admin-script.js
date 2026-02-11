@@ -516,7 +516,6 @@ function openCourseModal(item = null) {
     if (ui.courseDuration) ui.courseDuration.value = item?.duration || computeDuration(timeRange.start, timeRange.end);
     document.getElementById('courseRoom').value = item?.room || '';
     document.getElementById('courseTeacher').value = item?.teacher || '';
-    document.getElementById('courseMaxStudents').value = item?.maxStudents || '';
     document.getElementById('courseDescription').value = item?.description || '';
     openModal(modals.course);
 }
@@ -590,7 +589,6 @@ forms.course?.addEventListener('submit', async (event) => {
         duration: computeDuration(startTime, endTime),
         room: document.getElementById('courseRoom').value.trim(),
         teacher: document.getElementById('courseTeacher').value.trim(),
-        maxStudents: Number(document.getElementById('courseMaxStudents').value) || null,
         description: document.getElementById('courseDescription').value.trim()
     };
 

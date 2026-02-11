@@ -194,10 +194,6 @@ function createScheduleCard(course) {
                     <i class="fas fa-map-marker-alt schedule-item-icon"></i>
                     <span>${course.room}</span>
                 </div>
-                <div class="schedule-item">
-                    <i class="fas fa-users schedule-item-icon"></i>
-                    <span>Max ${course.maxStudents} élèves</span>
-                </div>
             </div>
             <div class="schedule-card-footer">
                 <span class="teacher-name"><i class="fas fa-chalkboard-teacher"></i> ${course.teacher}</span>

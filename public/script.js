@@ -293,7 +293,9 @@ function renderNews(news) {
 
     newsGrid.innerHTML = news.map(item => {
         const hasDate = item.date && item.date.trim();
-        const image = item.image && item.image.trim() ? item.image : 'assets/images/danse1.jpg';
+        const image = item.image && item.image.trim()
+            ? item.image
+            : 'https://images.unsplash.com/photo-1515165562835-c4c89f819bcd?auto=format&fit=crop&w=1200&q=80';
         const text = item.text || '';
 
         let dateHtml = '';

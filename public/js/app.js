@@ -21,6 +21,7 @@ import { renderNews, checkForNewContent, requestNotificationPermission } from '.
 import { initContactForm, initNewsletter } from './modules/contact.js';
 import { initParallax, initScrollAnimations, initPremiumAnimations } from './modules/animations.js';
 import { initAdvancedFilters, populateTeacherFilter } from './modules/filters.js';
+import './modules/selection.js';
 import { initFormValidation } from './modules/validation.js';
 import { initFAQAccordion } from './modules/faq.js';
 
