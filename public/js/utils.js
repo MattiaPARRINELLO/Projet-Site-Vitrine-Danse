@@ -109,10 +109,10 @@ function debug(message, data = null) {
  */
 function getTeacherNameById(teacherId, teachers = null) {
     if (!teacherId) return 'Professeur';
-    
+
     const teacherList = teachers || (typeof AppState !== 'undefined' ? AppState.allTeachers : window.allTeachers) || [];
     const teacher = teacherList.find(t => t.id === teacherId);
-    
+
     return teacher ? teacher.name : 'Professeur';
 }
 
@@ -124,7 +124,7 @@ function getTeacherNameById(teacherId, teachers = null) {
  */
 function getTeacherById(teacherId, teachers = null) {
     if (!teacherId) return null;
-    
+
     const teacherList = teachers || (typeof AppState !== 'undefined' ? AppState.allTeachers : window.allTeachers) || [];
     return teacherList.find(t => t.id === teacherId) || null;
 }
