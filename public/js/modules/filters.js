@@ -62,7 +62,7 @@ function populateTeacherFilter(teachers) {
 
     teachers.forEach(teacher => {
         const option = document.createElement('option');
-        option.value = teacher.name;
+        option.value = teacher.id;
         option.textContent = teacher.name;
         filterTeacher.appendChild(option);
     });
@@ -92,8 +92,9 @@ function applyAdvancedFilters() {
 
     // Filtre par professeur
     if (AppState.advancedFilters.teacher !== 'all') {
+        const teacherId = parseInt(AppState.advancedFilters.teacher);
         filteredCourses = filteredCourses.filter(course =>
-            course.teacher === AppState.advancedFilters.teacher
+            course.teacherId === teacherId
         );
     }
 

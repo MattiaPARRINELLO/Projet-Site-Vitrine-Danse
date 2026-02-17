@@ -101,6 +101,34 @@ function debug(message, data = null) {
     console.log(`🎭 [Arabesque] ${message}`, data || '');
 }
 
+/**
+ * Récupère le nom du professeur par son ID
+ * @param {number|null} teacherId - L'ID du professeur
+ * @param {Array} teachers - Liste des professeurs (utilise AppState par défaut)
+ * @returns {string} Le nom du professeur ou "Professeur" par défaut
+ */
+function getTeacherNameById(teacherId, teachers = null) {
+    if (!teacherId) return 'Professeur';
+    
+    const teacherList = teachers || (typeof AppState !== 'undefined' ? AppState.allTeachers : window.allTeachers) || [];
+    const teacher = teacherList.find(t => t.id === teacherId);
+    
+    return teacher ? teacher.name : 'Professeur';
+}
+
+/**
+ * Récupère l'objet professeur complet par son ID
+ * @param {number|null} teacherId - L'ID du professeur
+ * @param {Array} teachers - Liste des professeurs (utilise AppState par défaut)
+ * @returns {Object|null} L'objet professeur ou null
+ */
+function getTeacherById(teacherId, teachers = null) {
+    if (!teacherId) return null;
+    
+    const teacherList = teachers || (typeof AppState !== 'undefined' ? AppState.allTeachers : window.allTeachers) || [];
+    return teacherList.find(t => t.id === teacherId) || null;
+}
+
 export {
     formatPrice,
     getMonthShort,
@@ -109,5 +137,7 @@ export {
     extractHours,
     parseDuration,
     isRecent,
-    debug
+    debug,
+    getTeacherNameById,
+    getTeacherById
 };

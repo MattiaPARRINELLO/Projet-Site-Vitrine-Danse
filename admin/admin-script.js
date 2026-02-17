@@ -334,20 +334,23 @@ function renderCourses() {
         return renderEmpty(ui.coursesList, 'Aucun cours pour le moment.');
     }
 
-    ui.coursesList.innerHTML = state.courses.map(course => `
+    ui.coursesList.innerHTML = state.courses.map(course => {
+        const teacher = course.teacherId ? state.teachers.find(t => t.id === course.teacherId)?.name || 'Professeur' : '';
+        return `
         <article class="card">
             <div class="card-header">
                 <div class="card-title">${course.type || course.danceType || 'Cours'}</div>
                 <span class="badge">${course.level || 'Niveau'}</span>
             </div>
             <p class="card-text">${course.days?.join(', ') || ''} · ${course.time || ''}</p>
-            <p class="card-text">${course.teacher || ''} · ${course.room || ''}</p>
+            <p class="card-text">${teacher} · ${course.room || ''}</p>
             <div class="card-actions">
                 <button class="btn btn-secondary" data-action="edit-course" data-id="${course.id}">Modifier</button>
                 <button class="btn btn-danger" data-action="delete-course" data-id="${course.id}">Supprimer</button>
             </div>
         </article>
-    `).join('');
+    `}).join('');
+}
 }
 
 function renderTeachers() {
@@ -377,7 +380,7 @@ function renderTeachers() {
 function renderTeacherOptions() {
     if (!ui.courseTeacher) return;
     const options = state.teachers.map(teacher => `
-        <option value="${teacher.name}">${teacher.name}</option>
+        <option value="${teacher.id}">${teacher.name}</option>
     `).join('');
     ui.courseTeacher.innerHTML = `<option value="">Sélectionner</option>${options}`;
 }
@@ -515,7 +518,7 @@ function openCourseModal(item = null) {
     if (ui.courseEndTime) ui.courseEndTime.value = timeRange.end;
     if (ui.courseDuration) ui.courseDuration.value = item?.duration || computeDuration(timeRange.start, timeRange.end);
     document.getElementById('courseRoom').value = item?.room || '';
-    document.getElementById('courseTeacher').value = item?.teacher || '';
+    document.getElementById('courseTeacher').value = item?.teacherId || '';
     document.getElementById('courseDescription').value = item?.description || '';
     openModal(modals.course);
 }
@@ -588,7 +591,7 @@ forms.course?.addEventListener('submit', async (event) => {
         time: buildTimeRange(startTime, endTime),
         duration: computeDuration(startTime, endTime),
         room: document.getElementById('courseRoom').value.trim(),
-        teacher: document.getElementById('courseTeacher').value.trim(),
+        teacherId: document.getElementById('courseTeacher').value.trim() ? parseInt(document.getElementById('courseTeacher').value.trim()) : null,
         description: document.getElementById('courseDescription').value.trim()
     };
 

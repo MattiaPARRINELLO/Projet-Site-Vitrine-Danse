@@ -9,7 +9,7 @@
       "time": "18h30 - 20h30",
       "duration": "2h",
       "room": "",
-      "teacher": "Camille Bonard",
+      "teacherId": 1769782076589,
       "maxStudents": null,
       "description": ""
     },
@@ -22,7 +22,7 @@
       "time": "20h30 - 22h00",
       "duration": "1h30",
       "room": "",
-      "teacher": "Camille Bonard",
+      "teacherId": 1769782076589,
       "maxStudents": null,
       "description": ""
     },
@@ -35,7 +35,7 @@
       "time": "20h30 - 22h00",
       "duration": "1h30",
       "room": "",
-      "teacher": "Camille Bonard",
+      "teacherId": 1769782076589,
       "maxStudents": null,
       "description": ""
     },
@@ -48,7 +48,7 @@
       "time": "12h21 - 12h30",
       "duration": "9min",
       "room": "",
-      "teacher": "",
+      "teacherId": null,
       "maxStudents": null,
       "description": ""
     }

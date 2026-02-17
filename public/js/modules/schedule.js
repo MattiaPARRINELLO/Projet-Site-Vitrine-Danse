@@ -3,7 +3,7 @@
    ============================================ */
 
 import { AppState } from '../state.js';
-import { getLevelColor } from '../utils.js';
+import { getLevelColor, getTeacherNameById } from '../utils.js';
 import { showToast } from './toast.js';
 
 /**
@@ -196,7 +196,7 @@ function createScheduleCard(course) {
                 </div>
             </div>
             <div class="schedule-card-footer">
-                <span class="teacher-name"><i class="fas fa-chalkboard-teacher"></i> ${course.teacher}</span>
+                <span class="teacher-name"><i class="fas fa-chalkboard-teacher"></i> ${getTeacherNameById(course.teacherId)}</span>
                 <button class="btn btn-outline course-select-btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;" 
                         data-course-id="${course.id}" 
                         onclick="toggleCourseSelection(${course.id})">

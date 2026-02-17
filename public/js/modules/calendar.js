@@ -3,7 +3,7 @@
    ============================================ */
 
 import { AppState } from '../state.js';
-import { extractHours } from '../utils.js';
+import { extractHours, getTeacherNameById } from '../utils.js';
 import { showToast } from './toast.js';
 import { displaySchedule } from './schedule.js';
 
@@ -176,7 +176,7 @@ function createCourseCard(layoutItem, startHour) {
     }
 
     const type = course.type || 'Cours sans nom';
-    const teacher = course.teacher || 'Professeur';
+    const teacher = getTeacherNameById(course.teacherId);
     const level = course.level || '';
     const time = course.time || '';
 
@@ -329,7 +329,7 @@ function openCourseModal(course) {
     const selectBtn = document.getElementById('courseModalSelectBtn');
 
     if (title) title.textContent = course.type || 'Cours';
-    if (subtitle) subtitle.textContent = `${course.level || 'Tous niveaux'} • ${course.teacher || 'Professeur'}`;
+    if (subtitle) subtitle.textContent = `${course.level || 'Tous niveaux'} • ${getTeacherNameById(course.teacherId)}`;
 
     if (details) {
         details.innerHTML = `
